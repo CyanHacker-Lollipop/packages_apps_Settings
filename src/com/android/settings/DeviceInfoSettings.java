@@ -90,10 +90,6 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
 
     static final int TAPS_TO_BE_A_DEVELOPER = 7;
 
-    public static final String KEY_ADVANCED_MODE = "advanced_mode";
-
-    SecureSettingSwitchPreference mAdvancedSettings;
-
     long[] mHits = new long[3];
     int mDevHitCountdown;
     Toast mDevHitToast;
@@ -113,7 +109,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         setStringSummary(KEY_BUILD_NUMBER, Build.DISPLAY);
         findPreference(KEY_BUILD_NUMBER).setEnabled(true);
         findPreference(KEY_KERNEL_VERSION).setSummary(getFormattedKernelVersion());
-        setValueSummary(KEY_MOD_VERSION, "ro.cm.display.version");
+        setValueSummary(KEY_MOD_VERSION, "ro.ch.display.version");
         findPreference(KEY_MOD_VERSION).setEnabled(true);
         setValueSummary(KEY_MOD_BUILD_DATE, "ro.build.date");
 
@@ -198,17 +194,11 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
                 getPreferenceScreen().removePreference(pref);
             }
         }
-
-        mAdvancedSettings = (SecureSettingSwitchPreference) findPreference(KEY_ADVANCED_MODE);
-        // If enabled by default, just remove the setting, because it's confusing.
-        removePreferenceIfBoolFalse(KEY_ADVANCED_MODE, !getResources().getBoolean(
-                com.android.internal.R.bool.config_advancedSettingsMode));
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        mAdvancedSettings.setChecked(SettingsActivity.showAdvancedPreferences(getActivity()));
         mDevHitCountdown = getActivity().getSharedPreferences(DevelopmentSettings.PREF_FILE,
                 Context.MODE_PRIVATE).getBoolean(DevelopmentSettings.PREF_SHOW,
                         android.os.Build.TYPE.equals("eng")) ? -1 : TAPS_TO_BE_A_DEVELOPER;

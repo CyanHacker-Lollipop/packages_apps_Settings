@@ -164,7 +164,6 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
     }
 
     private List<PreferenceNodeInfo> findKeysToRemove(int xmlResId) {
-        final boolean advancedModeEnabled = SettingsActivity.showAdvancedPreferences(getActivity());
         List<PreferenceNodeInfo> preferencesToRemove = new ArrayList<>();
         XmlResourceParser parser = null;
         try {
@@ -177,7 +176,6 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
             }
 
             String key, lastCategoryKey = null;
-            Boolean advanced;
             final int preferenceScreenDepth = parser.getDepth();
             final AttributeSet attrs = Xml.asAttributeSet(parser);
 
@@ -197,17 +195,7 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
                 }
 
                 key = getDataKey(getActivity(), attrs);
-                advanced = getAdvancedBoolean(getActivity(), attrs);
 
-                if (advanced != null) {
-                    if (!advancedModeEnabled && advanced) {
-                        // advanced mode is OFF and this preference is advanced
-                        preferencesToRemove.add(new PreferenceNodeInfo(lastCategoryKey, key));
-                    } else if (advancedModeEnabled && !advanced) {
-                        // advanced mode is ON and this preference is not advanced
-                        preferencesToRemove.add(new PreferenceNodeInfo(lastCategoryKey, key));
-                    }
-                }
 
                 if (nodeName.equals(NODE_PREFERENCE_CATEGORY)) {
                     lastCategoryKey = getDataKey(getActivity(), attrs);
@@ -255,11 +243,6 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
             }
         }
         return (data != null) ? data.toString() : null;
-    }
-
-    private Boolean getAdvancedBoolean(Context context, AttributeSet attrs) {
-        return getBoolean(context, attrs,
-                R.styleable.Preference, R.styleable.Preference_advanced);
     }
 
     private Boolean getBoolean(Context context, AttributeSet set, int[] attrs, int resId) {

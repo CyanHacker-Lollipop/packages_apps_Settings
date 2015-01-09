@@ -37,12 +37,10 @@ import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.INetworkManagementService;
 import android.os.Message;
-import android.os.PowerManager;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.UserHandle;
@@ -1004,7 +1002,6 @@ public class SettingsActivity extends Activity
      * @param target The list in which the parsed categories and tiles should be placed.
      */
     private void loadCategoriesFromResource(int resid, List<DashboardCategory> target) {
-        final boolean showAdvancedPreferences = showAdvancedPreferences(this);
 
         XmlResourceParser parser = null;
         try {
@@ -1064,18 +1061,6 @@ public class SettingsActivity extends Activity
                         String innerNodeName = parser.getName();
                         if (innerNodeName.equals("dashboard-tile")) {
                             DashboardTile tile = new DashboardTile();
-
-                            sa = obtainStyledAttributes(attrs, R.styleable.Preference);
-                            tv = sa.peekValue(R.styleable.Preference_advanced);
-                            if (tv != null && tv.type == TypedValue.TYPE_INT_BOOLEAN) {
-                                final boolean value = tv.data != 0;
-
-                                final boolean skipAdvanced = (!showAdvancedPreferences && value)
-                                        || (showAdvancedPreferences && !value);
-                                if (skipAdvanced) {
-                                    continue;
-                                }
-                            }
 
                             sa = obtainStyledAttributes(
                                     attrs, com.android.internal.R.styleable.PreferenceHeader);
@@ -1168,10 +1153,9 @@ public class SettingsActivity extends Activity
     private void updateTilesList(List<DashboardCategory> target) {
         final boolean showDev = mDevelopmentPreferences.getBoolean(
                 DevelopmentSettings.PREF_SHOW,
-                android.os.Build.TYPE.equals("eng"));
+                android.os.Build.TYPE.equals("eng") || android.os.Build.TYPE.equals("userdebug"));
 
         final UserManager um = (UserManager) getSystemService(Context.USER_SERVICE);
-        final PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
 
         final int size = target.size();
         for (int i = 0; i < size; i++) {
@@ -1252,13 +1236,6 @@ public class SettingsActivity extends Activity
                 } else if (id == R.id.development_settings) {
                     if (!showDev || um.hasUserRestriction(
                             UserManager.DISALLOW_DEBUGGING_FEATURES)) {
-                        removeTile = true;
-                    }
-                } else if (id == R.id.performance_settings) {
-                    final boolean forceHide =
-                            getResources().getBoolean(R.bool.config_hidePerformanceSettings);
-                    if (forceHide ||
-                            !(pm.hasPowerProfiles() || (showDev && !Build.TYPE.equals("user")))) {
                         removeTile = true;
                     }
                 }
@@ -1435,17 +1412,5 @@ public class SettingsActivity extends Activity
             return;
         }
         super.onNewIntent(intent);
-    }
-
-    /**
-     * Showing "advanced options" on a retail build involves a toggle,
-     * however, it should always show all advanced options if the option is enabled
-     * by default in an overlay.
-     */
-    public static boolean showAdvancedPreferences(Context context) {
-        return (android.provider.Settings.Secure.getInt(context.getContentResolver(),
-                android.provider.Settings.Secure.ADVANCED_MODE, 1) == 1)
-                && context.getResources().getBoolean(
-                com.android.internal.R.bool.config_advancedSettingsMode);
     }
 }

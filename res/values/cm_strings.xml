@@ -303,8 +303,6 @@
     <string name="build_date">Build date</string>
     <string name="build_date_default" translatable="false">2014-01-01-0000</string>
 
-    <string name="contributor_cloud_title">Contributors</string>
-
     <!-- About phone screen, service state -->
     <string name="phone_service_state">Voice: <xliff:g id="voice_state">%1$s</xliff:g>, data: <xliff:g id="data_state">%2$s</xliff:g></string>
 
@@ -392,7 +390,7 @@
     <string name="navigation_bar_arrow_keys_summary">Display left and right cursor buttons while typing. Overrides IME switcher.</string>
     <string name="navigation_bar_recents_title">Recents long press action</string>
 
-    <string name="header_category_personalization">Personalization</string>
+    <string name="header_category_personalization">Customization</string>
 
     <!-- Status bar -->
     <string name="status_bar_title">Status bar</string>
@@ -419,6 +417,7 @@
     <string name="status_bar_battery_style_icon_portrait">Icon portrait</string>
     <string name="status_bar_battery_style_icon_landscape">Icon landscape</string>
     <string name="status_bar_battery_style_circle">Circle</string>
+    <string name="status_bar_battery_style_dotted_circle">Dotted circle</string>
     <string name="status_bar_battery_style_text">Text</string>
     <string name="status_bar_battery_style_hidden">Hidden</string>
 
@@ -941,51 +940,6 @@
     <string name="picker_activities">Activities</string>
     <string name="select_custom_app_title">Select custom app</string>
     <string name="select_custom_activity_title">Select custom activity</string>
-
-    <!-- Performance settings -->
-    <string name="performance_settings_title">Performance</string>
-
-    <!-- Performance Settings : I/O scheduler settings title -->
-    <string name="io_scheds_title">I/O scheduler</string>
-
-    <!-- Performance Settings : I/O scheduler settings sub items -->
-    <string name="io_sched_title">I/O scheduler</string>
-    <string name="io_sched_summary" translatable="false">%S</string>
-
-    <!-- Performance Settings : Performance profile settings -->
-    <string name="perf_profile_title">Battery mode</string>
-
-    <!-- Performance : Force high-end graphics -->
-    <string name="pref_force_highend_gfx_title">Force high-end graphics</string>
-    <string name="pref_force_highend_gfx_summary">Enables high-end visual effects such as transparent status/navigation bar (requires reboot)</string>
-
-    <!-- Performance Settings : Warning dialog -->
-    <string name="performance_settings_warning_title">Proceed with caution</string>
-    <string name="performance_settings_warning">These settings are experimental and any applied changes have the potential to cause instability, crashes, data loss or hardware failures.\n\nWe request that you do not file bug reports if any settings are changed from their defaults.</string>
-
-    <!-- Performance Settings : Set on boot option -->
-    <string name="performance_set_on_boot">Set on boot</string>
-    <string name="performance_set_on_boot_summary">Restore the settings on boot</string>
-
-    <!-- Performance Settings : Processor Settings -->
-    <!-- Performance Settings : Processor settings title -->
-    <string name="processor_title">Processor</string>
-
-    <!-- Performance Settings : Processor settings sub items -->
-    <string name="cpu_cur_freq_title">Current CPU frequency</string>
-    <string name="cpu_governors_title">CPU governor</string>
-    <string name="cpu_governors_summary" translatable="false">%S</string>
-    <string name="cpu_min_freq_title">Minimum CPU frequency</string>
-    <string name="cpu_min_freq_summary" translatable="false">%s</string>
-    <string name="cpu_max_freq_title">Maximum CPU frequency</string>
-    <string name="cpu_max_freq_summary" translatable="false">%s</string>
-
-    <!-- Automatic performance profiles -->
-    <string name="autoperf_title">Enable per-app profiles</string>
-    <string name="autoperf_summary">Automatically choose an appropriate performance profile for various apps</string>
-
-    <!-- Performance menu, graphics options category -->
-    <string name="graphics_title">Graphics and rendering</string>
 
     <!-- EdgeGesture service -->
     <string name="edge_gesture_service_title">Block gesture touch events</string>
