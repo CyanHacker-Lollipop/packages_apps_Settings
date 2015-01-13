@@ -16,6 +16,7 @@
 
 package com.android.settings.deviceinfo;
 
+import android.app.ActionBar;
 import android.bluetooth.BluetoothAdapter;
 import android.content.BroadcastReceiver;
 import android.content.ClipboardManager;
@@ -42,7 +43,9 @@ import android.telephony.PhoneNumberUtils;
 import android.telephony.PhoneStateListener;
 import android.telephony.ServiceState;
 import android.telephony.TelephonyManager;
+import android.telephony.SubscriptionManager;
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
@@ -263,6 +266,11 @@ public class Status extends PreferenceActivity {
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
+        ActionBar mActionBar = getActionBar();
+        if (mActionBar != null) {
+            mActionBar.setDisplayHomeAsUpEnabled(true);
+        }
+
         mHandler = new MyHandler(this);
 
         mCM = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
@@ -299,6 +307,11 @@ public class Status extends PreferenceActivity {
                 removePreferenceFromScreen(key);
             }
         } else {
+            if (SubscriptionManager.getActiveSubInfoCount() == 0) {
+                for (String key : PHONE_RELATED_ENTRIES) {
+                    removePreferenceFromScreen(key);
+                }
+            }
             // NOTE "imei" is the "Device ID" since it represents
             //  the IMEI in GSM and the MEID in CDMA
             if (mPhone.getPhoneName().equals("CDMA")) {
@@ -409,6 +422,15 @@ public class Status extends PreferenceActivity {
             intent.putExtra(SelectSubscription.TARGET_CLASS,
                     "com.android.settings.deviceinfo.msim.MSimSubscriptionStatus");
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
+        return false;
     }
 
     @Override
@@ -658,7 +680,7 @@ public class Status extends PreferenceActivity {
     }
 
     private boolean isMultiSimEnabled() {
-        return (TelephonyManager.getDefault().getPhoneCount() > 1);
+        return (SubscriptionManager.getActiveSubInfoCount() > 1);
     }
 
     private String getSerialNumber() {
