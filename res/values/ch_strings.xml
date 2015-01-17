@@ -5,5 +5,8 @@
     <!-- About phone screen, CyanHacker version -->
     <string name="ch_version_title">CyanHacker version</string>
     <string name="ch_version_default">Unknown</string>
+	
+    <!-- CyanHacker Settings -->
+    <string name="ch_settings_title">CyanHacker Control</string>
 
 </resources>
