@@ -130,7 +130,8 @@
         <Preference android:key="mod_version"
                 style="?android:preferenceInformationStyle"
                 android:title="@string/ch_version_title"
-                android:summary="@string/ch_version_default"/>
+                android:summary="@string/ch_version_default"
+				android:selectable="false" />
 
         <!-- Device firmware version -->
         <Preference android:key="firmware_version" 
