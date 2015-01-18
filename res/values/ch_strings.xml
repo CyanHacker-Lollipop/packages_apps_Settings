@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- About phone screen, CyanHacker version -->
+    <string name="ch_version_title">CyanHacker version</string>
+    <string name="ch_version_default">Unknown</string>
+
+</resources>
