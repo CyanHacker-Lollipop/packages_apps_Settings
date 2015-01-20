@@ -30,7 +30,7 @@ import android.util.Log;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class CHSettings extends SettingsPreferenceFragment implements
+public class CHControl extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
     private static final String TAG = "CHControl";
