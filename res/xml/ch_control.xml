@@ -34,5 +34,15 @@
             android:fragment="com.android.settings.cyanogenmod.NotificationDrawerSettings"
             android:icon="@drawable/ic_settings_notification_drawer"
             />
+			
+    <!-- Recents -->
+	<!-- we may want to change the Icon later -->
+    <PreferenceScreen
+            android:id="@+id/recents_settings"
+            android:title="@string/recents_title"
+            android:fragment="com.android.settings.ch.RecentSettings"
+            android:icon="@drawable//ic_settings_more" 
+            />
+		
 
 </PreferenceScreen>
