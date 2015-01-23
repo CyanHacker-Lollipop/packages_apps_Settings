@@ -11,4 +11,11 @@
 	<string name="recents_title">Recents</string>
     <string name="omniswitch_title">OmniSwitch</string>
 	<string name="omniswitch_summary">Recent-apps switcher by OmniRom</string>
+	<string name="ch_apps">CyanHacker Apps</string>
+	<string name="bbs">Better Battery Stats</string>
+    <string name="fmount">Folder Mount</string>
+	<string name="sdmaid">SD-Maid</string>
+	<string name="greenify">Greenify</string>
+	<string name="titanium">Titanium</string>
+    <string name="wallpaper">Wally</string>
 </resources>
