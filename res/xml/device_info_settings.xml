@@ -16,6 +16,11 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/about_settings">
+		
+		 <!-- CyanHacker logo -->
+        <PreferenceScreen android:key="ch_logo"
+                android:enabled="false"
+                android:layout="@layout/ch_logo" />
 
         <!-- System update settings - launches activity -->
 		<!-- not shown -->
