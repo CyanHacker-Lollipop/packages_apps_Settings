@@ -3,12 +3,11 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- About phone screen, CyanHacker version -->
-    <string name="ch_version_title">CyanHacker version</string>
-    <string name="ch_version_default">Unknown</string>
+    <string name="ch_version_title">CyanHacker Version</string>
+    <string name="ch_version_default">Unbekannt</string>
 	
     <!-- CyanHacker Settings -->
-    <string name="ch_settings_title">CyanHacker Control</string>
 	<string name="recents_title">Recents</string>
     <string name="omniswitch_title">OmniSwitch</string>
-	<string name="omniswitch_summary">Recent-apps switcher by OmniRom</string>
+	<string name="omniswitch_summary">Zuletzt verwendete Apps verwalten</string>
 </resources>
