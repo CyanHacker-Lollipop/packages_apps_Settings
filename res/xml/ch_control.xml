@@ -42,6 +42,12 @@
             android:fragment="com.android.settings.cyanogenmod.NotificationDrawerSettings"
             android:icon="@drawable/ic_settings_notification_drawer"
             />
+	<!-- Network Traffic -->
+        <PreferenceScreen
+            android:key="network_traffic_state"
+            android:fragment="com.android.settings.ch.NetworkTraffic"
+	    android:summary="@string/network_traffic_summary"
+	    android:title="@string/network_traffic_title" />
 			
     <!-- Recents -->
 	<!-- we may want to change the Icon later -->
