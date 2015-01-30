@@ -61,4 +61,9 @@
     <string name="network_traffic_autohide">Auto hide</string>
     <string name="network_traffic_autohide_summary">Hide the traffic monitor when there is no activity</string>
     <string name="network_traffic_autohide_threshold">Inactivity threshold</string>
+
+    <!-- Devices and Maintainers -->
+    <string name="device_maintainers_title">CyanHacker Team</string>
+    <string name="device_maintainers_title_summary">List of Developers and CyanHacker ROM Maintainers</string>
+
 </resources>

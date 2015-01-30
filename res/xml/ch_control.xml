@@ -57,6 +57,13 @@
             android:fragment="com.android.settings.ch.RecentSettings"
             android:icon="@drawable/ic_settings_more" 
             />
+			
+    <!-- Devices and Maintainers -->
+    <PreferenceScreen
+         android:key="devices"
+         android:title="@string/device_maintainers_title"
+		 android:icon="@drawable/ic_ch_control"
+         android:fragment="com.android.settings.ch.Devices" />
 		
 
 </PreferenceScreen>
