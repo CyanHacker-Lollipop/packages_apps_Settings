@@ -69,4 +69,5 @@
     <string name="sar_head_level" translatable="false"></string>
     <!-- Maximum Specific Absorption Rate for body -->
     <string name="sar_body_level" translatable="false"></string>
+
 </resources>

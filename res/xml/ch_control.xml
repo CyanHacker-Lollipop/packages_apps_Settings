@@ -51,6 +51,13 @@
             android:fragment="com.android.settings.ch.RecentSettings"
             android:icon="@drawable/ic_settings_more" 
             />
-		
-
+			
+	<!-- Navigation Bar & Buttons -->
+	 <PreferenceScreen
+			android:id="@+id/button_settings"
+            android:title="@string/button_pref_title"
+            android:fragment="com.android.settings.ButtonSettings"
+            android:icon="@drawable/ic_settings_buttons"
+			/>
+			
 </PreferenceScreen>
