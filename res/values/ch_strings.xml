@@ -33,6 +33,7 @@
 	<string name="greenify">Greenify</string>
 	<string name="titanium">Titanium</string>
     <string name="wallpaper">Wally</string>
+	<string name="performance_settings_title">Performance</string>
 	
 	<!-- Recents panel settings -->
 	<string name="recents_panel_settings">Recents panel settings</string>
