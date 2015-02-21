@@ -28,15 +28,6 @@
 			android:targetClass="com.asksven.betterbatterystats.StatsActivity" />
     </PreferenceScreen>
 
-    <!-- FolderMount -->	
-	<PreferenceScreen 
-		android:icon="@drawable/ic_ch_control" 
-		android:title="@string/fmount">
-        <intent android:targetPackage="com.devasque.fmount" 
-			android:action="android.intent.action.VIEW" 
-			android:targetClass="com.devasque.fmount.FolderpairActivity" />
-    </PreferenceScreen>
-
     <!-- SDMaid -->	
     <PreferenceScreen 
 		android:icon="@drawable/ic_ch_control" 
