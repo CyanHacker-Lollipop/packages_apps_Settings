@@ -62,4 +62,8 @@
     <string name="network_traffic_autohide">Auto hide</string>
     <string name="network_traffic_autohide_summary">Hide the traffic monitor when there is no activity</string>
     <string name="network_traffic_autohide_threshold">Inactivity threshold</string>
+	
+	<!-- Equalizer -->
+	<string name="equalizer_catergory">Equalizer</string>
+    <string name="equalizer_title">Viper4Android</string>
 </resources>

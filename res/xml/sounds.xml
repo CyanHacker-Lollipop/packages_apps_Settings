@@ -19,6 +19,22 @@
                   android:title="@string/sound_settings"
                   android:key="sound_settings"
                   settings:keywords="@string/keywords_sounds_and_notifications">
+				  
+	<PreferenceCategory
+        android:key="equalizer"
+        android:title="@string/equalizer_catergory" >
+		
+	    <Preference
+			android:id="@+id/equalizer"
+			android:icon="@drawable/ic_equalizer"
+			android:title="@string/equalizer_title">
+			<intent
+             android:action="android.intent.action.MAIN"
+             android:targetClass="com.vipercn.viper4android_v2.activity.ViPER4Android"
+             android:targetPackage="com.vipercn.viper4android_v2" /> 
+        </Preference>	
+
+	</PreferenceCategory>		  
 
     <PreferenceCategory
             android:key="volumes"
