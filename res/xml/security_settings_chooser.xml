@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+s<?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2010 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -42,8 +42,7 @@
         <com.android.settings.cyanogenmod.SecureSettingSwitchPreference
                 android:key="lockscreen_visualizer"
                 android:title="@string/lockscreen_visualizer_title"
-                android:defaultValue="true"
-                settings:advanced="true"/>
+                android:defaultValue="true"/>
 
     </PreferenceCategory>
 
