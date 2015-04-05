@@ -27,6 +27,15 @@
             android:icon="@drawable/ic_ch_control" 
             />
 			
+	<!-- cLock -->
+	<PreferenceScreen
+        android:icon="@drawable/ic_settings_date_time"
+		android:title="@string/clock">
+        <intent android:targetPackage="com.cyanogenmod.lockclock" 
+			android:action="android.intent.action.MAIN" 
+			android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
+    </PreferenceScreen>		
+			
     <!-- Status bar -->
     <PreferenceScreen
             android:key="status_bar_settings"
