@@ -49,6 +49,7 @@
 
     <!-- Print -->
     <PreferenceScreen
+            android:id="@+id/print_settings"	
             android:title="@string/print_settings"
             android:fragment="com.android.settings.print.PrintSettingsFragment" />
 	
