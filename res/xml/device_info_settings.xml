@@ -82,6 +82,11 @@
                 <intent android:action="android.settings.LICENSE" />
             </PreferenceScreen>
 
+            <!-- CM License information -->
+            <PreferenceScreen
+                    android:key="cmlicense"
+                    android:title="@string/cmlicense_title" />
+
             <!-- Terms and conditions -->
             <PreferenceScreen
                     android:key="terms"
