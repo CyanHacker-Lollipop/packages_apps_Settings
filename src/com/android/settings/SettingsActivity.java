@@ -1422,5 +1422,20 @@ public class SettingsActivity extends Activity
                 return true;
         }
         return super.onKeyDown(keyCode, event);
+<<<<<<< HEAD
+=======
+    }
+
+    /**
+     * Showing "advanced options" on a retail build involves a toggle,
+     * however, it should always show all advanced options if the option is enabled
+     * by default in an overlay.
+     */
+    public static boolean showAdvancedPreferences(Context context) {
+        return (android.provider.Settings.Secure.getInt(context.getContentResolver(),
+                android.provider.Settings.Secure.ADVANCED_MODE, 1) == 1)
+                && context.getResources().getBoolean(
+                com.android.internal.R.bool.config_advancedSettingsMode);
+>>>>>>> bffcf43f4
     }
 }
