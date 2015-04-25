@@ -107,8 +107,7 @@
         <ListPreference
                 android:key="lcd_density"
                 android:title="@string/lcd_density"
-                android:persistent="false"
-                settings:advanced="true" />
+                android:persistent="false"/>
 
         <!-- Cast screen -->
         <PreferenceScreen
